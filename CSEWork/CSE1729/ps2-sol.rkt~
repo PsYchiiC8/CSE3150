@@ -1,0 +1,74 @@
+;problem 1
+
+;a
+(define (fizzbuzz x)
+  (if (and (not (= (modulo x 3) 0)) (not (= (modulo x 5) 0)))
+      x
+      (if (= 0 (modulo x 3))
+          (if (= 0 (modulo x 5))
+              "fizzbuzz"
+              "fizz"
+          )
+          "buzz"
+      )
+  )
+)
+
+;b
+
+(define (fizz x)
+  (= (modulo x 3) 0)
+)
+
+(define (buzz x)
+  (= (modulo x 5) 0)
+)
+
+(define (fizzbuzz2 x)
+  (cond ((and (not (fizz x)) (not (buzz x)))
+             x)
+        ((and (fizz x) (buzz x))
+             "fizzbuzz")
+        ((fizz x)
+             "fizz")
+        ((buzz x)
+             "buzz")
+  )
+)
+
+
+;problem 2
+
+(define (piecewise x)
+  (define pi 3.142)
+  (cond ((> x (* pi 2))
+         (- x (* pi 2)))
+        ((<= (* -1 pi) x)
+         (sin x))
+        ((< x (* -1 pi))
+         (- (* -1 x) pi)))
+)
+
+;problem 3
+
+(define (inc x) (+ x 1))
+
+(define (dec x) (- x 1))
+
+(define (add n m)
+  (if (> n 0)
+      (add (dec n) (inc m))
+      m
+  )
+)
+
+;problem 4- doesn't work
+
+(define (mult n m)
+  (if (> n 1)
+      (mult (dec n) (add m m))
+      m
+  )
+)
+
+(mult 7 3)

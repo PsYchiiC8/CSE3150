@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:2222/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Q1b Login</title>
+	<link rel="stylesheet" href="./static/style.css">
+<link type="image/x-icon" rel="shortcut icon" href="http://localhost:2222/static/images/Icon/johnathan.ico"></head>
+
+
+
+<body style="background-image: url(&quot;static/images/Spring_Fog.jpg&quot;);">
+	<form id="mainHandler" method="post" action="{{ url_for('post_handler') }}">
+		<h1 id="loginHeader">Login Screen</h1>
+		 
+		<!-- Input objects being called through the login class that is passed through -->
+		<p id="netIdInput"> <label for="netId">Net ID</label>: <input id="netId" name="netId" required="" size="32" type="text" value=""> </p>
+
+		<p id="lastNameInput"> <label for="lastName">Last Name</label>: <input id="lastName" name="lastName" required="" size="32" type="text" value=""> </p>
+
+		<p id="signIn"><input id="submit" name="submit" type="submit" value="Sign In"></p>
+		
+
+		<!-- Where the login block is placed -->
+
+    <div id="Q1b"></div>
+	</form>
+
+</body></html>

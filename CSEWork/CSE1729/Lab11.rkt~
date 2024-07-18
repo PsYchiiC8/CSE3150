@@ -1,0 +1,14 @@
+(define (head s) (car s))
+(define (rest s) (force (cdr s)))
+
+;problem 1
+
+;a
+
+(define (lucas-stream)
+  (lambda (n)
+    (cond ((= n 0) 1)
+          ((= n 1) 3)
+          (else
+           (+ ((lucas-stream) (- n 1)) ((lucas-stream) (- n 2))))))
+)

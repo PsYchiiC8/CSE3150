@@ -1,0 +1,59 @@
+;problem 1
+
+;a
+
+(define (chord-length theta)
+  (* 2 (sin (/ theta 2)))
+)
+
+;b
+
+(define (iradius A B C)
+  (let ((S (/ (+ A B C) 2)))
+    (sqrt (/ (* (- S A) (- S B) (- S C)) S)))
+)
+
+;c
+
+(define (harmonic n)
+  (if (> n 1)
+      (+ (/ 1 n) (harmonic (- n 1)))
+      1)
+)
+
+;d
+
+(define (reciprocals n)
+  (if (and (prime? n) (> n 1))
+      (+ (/ 1 n) (reciprocals (- n 1)))
+      (if (< n 2)
+          0
+          (reciprocals (- n 1))))
+)
+
+
+;problem 2
+
+;a
+
+(define (improve g)
+  (/ (+ (* g g) 1) (- (* 2 g) 1))
+)
+
+;b
+
+(define (phi-help k n an)
+  (if (< k n)
+      (phi-help (+ k 1) n (improve an))
+      an)
+)
+
+(define (phi-approximant n)
+  (phi-help 0 n 1)
+)
+
+;c
+
+(define (phi-approx accuracy)
+  )
+

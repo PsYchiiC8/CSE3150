@@ -1,0 +1,35 @@
+;problem 1
+
+(define (make-clock hour minute)
+  (lambda (x)
+    (if (= x 'military)
+        (cond ((< minute 10)
+               (string-append (number->string hour) ":0" (number->string minute) "\n"))
+              (#t (string-append (number->string hour) ":" (number->string minute) "\n")))
+        (if (and (> hour 12) (< minute 10))
+            (string-append (number->string (modulo hour 12)) ":0" (number->string minute) " PM\n")
+            (if (> hour 12)
+                (string-append (number->string (modulo hour 12)) ":" (number->string minute) " PM\n")
+                (if (< minute 10)
+                    (string-append (number->string hour) ":0" (number->string minute) " AM\n")
+                    (string-append (number->string hour) ":" (number->string minute) " AM\n")))))
+  )
+)
+
+;problem 2
+
+(define (make-stack)
+  (let ((lst '()))
+    (define (empty?) (null? lst))
+    (define (push x) (set! lst (cons x lst)) lst)
+    (define (pop) (set! lst (cdr lst)) (car lst))
+    (define (top) (car lst))
+    (define (dispatcher action)
+      (cond ((eq? action 'empty?) empty?)
+            ((eq? action 'push) push)
+            ((eq? action 'pop) pop)
+            ((eq? action 'top) top)))
+    dispatcher)
+)
+
+

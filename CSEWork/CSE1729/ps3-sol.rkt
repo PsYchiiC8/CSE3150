@@ -1,0 +1,200 @@
+;1a Harmonic Numbers
+
+(define (harmonic n)
+  (if (> n 1)
+      (+ (/ 1 n) (harmonic (- n 1)))
+      1)
+)
+
+;1b Euler Estimate
+
+(define (Eulerest n)
+  (- (harmonic n) (log n))
+)
+
+;2 Primality test
+
+(define (prime? n)
+  (define (divisor? k) (= 0 (modulo n k)))
+  (define (divisors-upto k)
+    (and (> k 1)
+         (or (divisor? k) (divisors-upto (- k 1)))))
+  (and (> n 1)
+       (not (divisors-upto (- n 1)))))
+
+; 2 Count Primes
+
+(define (count-primes m)
+  (if (> m 1)
+      (if (eqv? (prime? m) #t)
+          (+ 1 (count-primes (- m 1)))
+          (count-primes (- m 1)))
+      0)
+)
+
+; 3 Relatively Prime
+
+(define (rel-prime a b)
+  (define (divides-both d)
+    (and (= 0 (modulo a d))
+         (= 0 (modulo b d))))
+  (define (divisor-upto k)
+    (and (> k 1)
+         (or (divides-both k)
+             (divisor-upto (- k 1)))))
+  (not (divisor-upto (min a b))))
+
+(define (count a b)
+  (if (= a 0)
+      0
+      (if (eqv? (rel-prime a b) #t)
+          (+ 1 (count (- a 1) b))
+          (count (- a 1) b))
+   )
+)
+
+(define (count-rel-prime n)
+  (if (= n 0)
+      0
+      (+ (count n n) (count-rel-prime (- n 1))))
+)
+
+; 4a Lucas Numbers
+
+(define (lucas n)
+  (cond ((= n 0) 2)
+        ((= n 1) 1)
+        ((> n 1)
+         (+ (lucas (- n 1)) (lucas (- n 2)))))
+)
+
+; 4b Lucas Number Ratios
+
+(define (Luscas-ratio n)
+  (+ 0.0 (/ (lucas n) (lucas (- n 1))))
+)
+
+(define (fibonacci n)
+  (cond ((= n 1) 1)
+        ((= n 2) 2)
+        (#t
+         (+ (Fibonacci-ratio (- n 1)) (Fibonacci-ratio (- n 2)))))
+)
+(define (Fibonacci-ratio n)
+  (+ (/ (fibonacci n) (fibonacci (- n 1))) 0.0)
+)
+
+; 4c
+
+(define (fast-Lucas-help n k luc-a luc-b)
+  (if (= n k)
+      luc-a
+      (fast-Lucas-help n (+ k 1) (+ luc-a luc-b) luc-a))
+)
+
+(define (fast-Lucas n) (fast-Lucas-help n 1 1 2))
+
+;; This function represents the table shown in the PDF.
+;; Simply "hard-code" the number of recursive call you believe
+;; take place for inputs 3 through 6
+(define (rec-call-lucas k)
+    (cond ((= k 1)  0)
+          ((= k 2)  2)
+          ((= k 3)  4)
+          ((= k 4)  8)
+          ((= k 5)  14)
+          ((= k 6)  24)
+    ))
+
+;; Do the same for the fast-lucas-helper
+(define (rec-call-fast-lucas-helper k)
+    (cond ((= k 1)  0)
+          ((= k 2)  1)
+          ((= k 3)  2)
+          ((= k 4)  3)
+          ((= k 5)  4)
+          ((= k 6)  5)
+    ))
+
+;5a Golden Ratio by continued fractions
+
+(define (golden n)
+  (if (> n 0)
+      (+ 1 (/ 1 (golden (- n 1))))
+      1)
+)
+
+;5b Golden Ratio by continued square root
+
+(define (golden-sqrt n)
+  (if (> n 0)
+      (sqrt (+ 1 (golden-sqrt (- n 1))))
+      1)
+)
+
+;6 explain
+(define (explain-interval-sum)
+  (define a "One can never do  an induction on both inputs at once.")
+  (define b "The base case isn't quite right. It needs to be updated to account for the two inductive calls.")
+  (define c "The inductive case should be adding three things together.")
+  (define d "The predicate to recognize the base case is wrong. One can go from m > n to m < n without ever seeing n = m.")
+  (define e "The predicate to recognize the base case is wrong. One can go from m > n to m < n without ever seeing n = m.")
+  e)
+
+
+;7 Ackermann Function
+
+(define (ack m n)
+  (cond ((= m 0)
+         (+ n 1))
+         ((and (> m 0) (= n 0))
+          (ack (- m 1) 1))
+          ((and (> m 0) (> n 0))
+           (ack (- m 1) (ack m (- n 1)))))
+)
+
+;8 Catalan numbers
+(define (catalan-terms n k)
+  (if (<= k n)
+      (* (/ (+ n k) k) (catalan-terms n (+ k 1)))
+      1)
+)
+   
+(define (catalan n)
+  (catalan-terms n 2)
+)
+
+;9 pi-approx
+
+(define pi-approx
+  (let ((a (/ (+ 23 (* 4 (sqrt 34))) 2))
+        (b (/ (+ (* 19 (sqrt 2)) (* 7 (sqrt 17))) 2))
+        (c (+ 429 (* 304 (sqrt 2))))
+        (d (/ (+ 627 (* 442 (sqrt 2))) 2)))
+    (let ((u (* (expt (+ a (sqrt (- (* a a) 1))) 2)
+               (expt (+ b (sqrt (- (* b b) 1))) 2)
+               (+ c (sqrt (- (* c c) 1)))
+               (+ d (sqrt (- (* d d) 1))))))
+      (/ (log (+ (expt (* u 2) 6) 24)) (sqrt 3502))))
+)
+
+
+;10 Gauss-Legendre
+
+(define (help-gauss a0 b0 t0 p0 tol)
+  (let ((an (/ (+ a0 b0) 2))
+        (bn (sqrt (* a0 b0)))
+        (pn (* 2 p0)))
+    (let ((tn (- t0 (* p0 (expt (- a0 an) 2)))))
+      (if (< (- an bn) tol)
+          (/ (expt (+ an bn) 2) (* 4 tn))
+          (help-gauss an bn tn pn tol))))
+)
+
+(define (gauss-legendre tol)
+  (let ((a0 1)
+        (b0 (/ 1 (sqrt 2)))
+        (t0 (/ 1 4))
+        (p0 1))
+    (help-gauss a0 b0 t0 p0 tol))
+)

@@ -1,0 +1,5 @@
+(define (huffman freqs)
+  (define (htree-leaf letter weight) (list 'leaf weight letter))
+  (define (htree-node t0 t1) (list 'internal (+ (htree-weight t0) (htree-weight t1)) t0 t1))
+  (define (htree-weight t) (cadr t))
+  ...)

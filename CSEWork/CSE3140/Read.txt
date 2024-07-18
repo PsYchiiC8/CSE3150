@@ -1,0 +1,15 @@
+CSE3140 Labs
+
+Modifications may be needed to work with different operating systems
+
+Lab reports- add explanations, name, netID, and IP address, may lose points for not including them
+
+Lab 0- set up FortiClient, first ssh into VM via terminal and set up connection, password, etc, then try setup in VSCode. Need Extensions- Remote SSH (may need Remote Tunnels). Go connect with "ssh cse@172.16.xx.yyy", same as what is used in terminal. Then enter password(need to do twice), may need duo
+Lab 1- passwords and hashing(can take a long time to run, chance of disconnecting from VPN/server, may need tmux(pipelining to recover progress), can try multithreading to spead up process, password cracking
+Lab 2- malware, generally should work, may have issue with rubber ducky, works better with windows(emulator)
+Lab 3- ransomeware and crypto
+Lab 4- web and phishing, websites may or may not work, may need minor modifications
+Lab 5- wifi security and rogue  access point, high difficultly with hardware and set up, best not attempt
+Lab 6- Web security, may or may not work well depending on operating system, Q4 may not work with Mac, but works with windows, careful with interpretation
+
+

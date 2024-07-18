@@ -1,0 +1,12 @@
+;problem 1
+
+(define (merge l1 l2)
+  (define (help-merge sort-lst L1 L2)
+    (if (and (null? L1) (null? L2)) sort-lst
+        (if (or (null? L2) (< (car L1) (car L2)))
+            (help-merge (append sort-lst (list (car L1))) (cdr L1) L2)
+            (if (or (null? L1) (< (car L2) (car L1)))
+                (help-merge (append sort-lst (list (car L2))) L1 (cdr L2)))))
+  )
+  (help-merge '() l1 l2)
+)

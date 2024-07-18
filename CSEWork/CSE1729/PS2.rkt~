@@ -1,0 +1,41 @@
+;problem 1
+
+;a
+(define (fizzbuzz x)
+  (if (and (not (= (modulo x 3) 0)) (not (= (modulo x 5) 0)))
+      x
+      (if (= 0 (modulo x 3))
+          (if (= 0 (modulo x 5))
+              "fizzbuzz"
+              "fizz"
+          )
+          "buzz"
+      )
+  )
+)
+
+;b
+
+(define (fizz x)
+  (= (modulo x 3) 0)
+)
+
+(define (buzz x)
+  (= (modulo x 5) 0)
+)
+
+(define (fizzbuzz2 x)
+  (cond ((and (not (fizz x)) (not (buzz x)))
+             x)
+        ((and (fizz x) (buzz x))
+             "fizzbuzz")
+        ((fizz x)
+             "fizz")
+        ((buzz x)
+             "buzz")
+  )
+)
+
+
+;problem 2
+

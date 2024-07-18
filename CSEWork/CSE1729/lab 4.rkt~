@@ -1,0 +1,6 @@
+;problem 1
+
+(define (windchill W F)
+  (let ((w (sqrt W)))
+    (+ 1.05 (* 0.93 F) (* -3.65 W) (* 3.62 w) (* 0.103 F w) (* 0.0439 (expt W 2))))
+)

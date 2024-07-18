@@ -1,0 +1,132 @@
+
+nav{
+  overflow: hidden;
+  /* color: black; */
+  /* background-color: white; */
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: black;
+}
+
+nav a.left{
+  float: left;
+  text-align: center;
+  padding: 18px 18px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+nav a.right{
+  float: right;
+  text-align: center;
+  padding: 30px 30px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+}
+
+nav a{
+  float: right;
+  text-align: center;
+  padding: 30px 30px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+
+nav a.active{
+  background-color: rgb(184, 183, 183);
+  color: black;
+}
+
+nav a:hover{
+  background-color: #ddd;
+  color: black;
+}
+
+body{
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 20px;
+  padding-top: 40px;
+  padding-bottom: -80px;
+}
+
+.profile{
+  border-radius: 150px;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+p{
+  font-size: 20px;
+  line-height-step: 30px;
+}
+
+p.home{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 25px;
+}
+
+h1.home{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 60px;
+}
+
+.indented{
+  margin-left: 30px; /* Adjust the margin value as needed */
+}
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

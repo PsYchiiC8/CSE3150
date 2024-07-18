@@ -1,1 +1,0 @@
-# GPSExample in class

@@ -1,0 +1,9 @@
+(define (make-tree value left right) (list value left right))
+(define (value tree) (car tree))
+(define (left tree) (cadr tree))
+(define (right tree) (caddr tree))
+
+;problem 1
+
+(define (tree-map T f)
+  

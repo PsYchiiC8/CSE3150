@@ -1,0 +1,16 @@
+;problem 1
+(define (usd-to-euro dollars)
+  (* dollars .82))
+
+(define (euro-to-yen euros)
+  (* euros 126.01))
+
+(define (usd-to-yen dollars)
+  (euro-to-yen (usd-to-euro dollars)))
+
+
+;problem 2
+(define e 2.71828)
+
+(define (tanh x)
+  (exp

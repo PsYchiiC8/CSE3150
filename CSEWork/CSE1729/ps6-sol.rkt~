@@ -1,0 +1,9 @@
+;problem 1
+
+(define (zip a b)
+  (define (help-zip lst an bn)
+    (if (null? (cdr an))
+        (append lst (cons (car an) (car bn)))
+        (append lst (list (cons (car an) (car bn)) (help-zip lst (cdr an) (cdr bn))))))
+  (help-zip '() a b)
+)

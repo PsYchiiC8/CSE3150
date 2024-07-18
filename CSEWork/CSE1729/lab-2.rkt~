@@ -1,0 +1,5 @@
+(define  (geom-series-np2 n)
+  (if (= n 0)
+      1
+      (+ (/ 1 (expt 2 n)) (geom-series-np2 (- n 1))))
+)

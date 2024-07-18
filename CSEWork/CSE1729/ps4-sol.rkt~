@@ -1,0 +1,10 @@
+(define (sum term a next b)
+  (if (> a b)
+      0
+      (+ (/ 1 a)
+         (sum term (+ 1 a) next b)))
+)
+
+(define (harmonic n)
+  (sum n 1 n n)
+)

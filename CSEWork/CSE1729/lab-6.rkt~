@@ -1,0 +1,23 @@
+;problem 1
+
+;a
+
+(define (list-at l i)
+  (if (= i 0)
+      (car l)
+      (list-at (cdr l) (- i 1)))
+)
+
+;b
+
+(define (find-length l)
+  (if (null? l) 0
+      (+ 1 (find-length (cdr l))))
+)
+
+(define (list-median l)
+  (let ((len-l (find-length l)))
+    (if (= (modulo len-l 2) 0)
+        (/ (+ (list-at l (/ len-l 2)) (list-at l (+ 1 (/ len-l 2)))) 2)
+        (list-at l (+ (floor (/ len-l 2)) 1))))
+)

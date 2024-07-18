@@ -1,0 +1,5 @@
+(define (heap-insert f x H)
+  (if (and (f x (car H)) (null? (cdr H)))
+      (append H (list x))
+      (append (heap-insert f x (car H)) (help-insert f x (cdr H))))
+)
