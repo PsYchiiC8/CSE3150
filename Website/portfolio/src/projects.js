@@ -50,7 +50,7 @@ function Projects() {
                     <tr>
                         <td style={{ width: '85%', paddingLeft: '30px', paddingRight: '50px', paddingBottom: '30px'  }}>
                             <p>
-                                Hello
+                                Hi
                             </p>
                         </td>
                     </tr>
