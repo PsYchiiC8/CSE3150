@@ -1,0 +1,18 @@
+Build Command:
+g++ ECConsoleUITextLabel.cpp ECTextViewImp.cpp ECConsoleUIView.cpp  ECConsoleUITest.cpp ECConsoleUIListBox.cpp ECConsoleUITextField.cpp ECConsoleUIButton.cpp -o test
+
+./test to run
+
+Functionality of ECConsoleUIListBox should fully work. CTRL_A moves from one box to another, scrolling functionality appears to work, highlighting works as well.
+
+Functionality of ECConsoleUITextField should fully work. CTRL_A moves from one box to another, backspace works, typing works, and CTRL_C disables editing.
+
+Cursor is moving with whatever item it is at.
+
+
+Video of functionality demonstration:
+
+https://kaltura.uconn.edu/media/CSE3150Part3/1_w6o5zw9e
+
+Time marker
+00:20 - Demonstrating functionality of CTRL_C

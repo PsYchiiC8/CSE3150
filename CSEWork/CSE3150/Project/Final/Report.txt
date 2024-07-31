@@ -1,0 +1,12 @@
+There is a Makefile attached, simply use the command "make" to compile, and "./program {+ the txt file}" to run
+Alternatively-
+g++ ConsoleTest.cpp ECAirlineFinancial.cpp ECAirlineOperation.cpp ECAirlineSimulator.cpp ECAirlineTicketing.cpp ECAirport.cpp ECConsoleUIButton.cpp ECConsoleUIListBox.cpp ECConsoleUITextField.cpp ECConsoleUITextLabel.cpp ECConsoleUIView.cpp ECFlight.cpp ECFlightItinerary.cpp ECTextViewImp.cpp ECConsoleUISearchButton.cpp -std=c++11
+and then
+./program (+ .txt file)
+
+SearchForFlights Button should work fine, it should have all necessary functionality with correct outputs
+The visuals are a little off. The top bar and the first few lines gets put multiple times and for some reason, it is put up pretty high
+
+
+Video-
+https://kaltura.uconn.edu/media/CSE3150+Final+Project+Video/1_dr2l0tct
