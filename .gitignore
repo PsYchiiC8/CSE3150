@@ -32,7 +32,7 @@ google-services.json
 # Android Profiling
 *.hprof
 
-Website/
-CSEWork/
-Portflio/Portfolio/
-new_website/website/
+.Website/
+.CSEWork/
+.Portflio/Portfolio/
+.new_website/website/
